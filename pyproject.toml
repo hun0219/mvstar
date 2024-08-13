@@ -1,15 +1,20 @@
 [project]
 name = "mvstar"
-version = "0.1.0"
+version = "0.2.0"
 description = "About movies and actors"
 authors = [
     {name = "dMario24", email = "data.mario24@gmail.com"},
 ]
-dependencies = []
-requires-python = "==3.11.*"
+dependencies = [
+    "requests>=2.32.3",
+    "tqdm>=4.66.5",
+    "pyspark>=3.5.2",
+    "findspark>=2.0.1",
+    "pandas>=2.2.2",
+]
+requires-python = ">=3.9"
 readme = "README.md"
-license = {text = "MIT"}
-
+license = {text = "GPL"}
 
 [tool.pdm]
 distribution = true
@@ -19,3 +24,16 @@ test = [
     "pytest>=8.3.2",
     "pytest-cov>=5.0.0",
 ]
+note = [
+    "ipykernel>=6.29.5",
+]
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+
+[project.urls]
+Homepage = "https://github.com/dMario24/mvstar"
+Issues = "https://github.com/dMario24/mvstar/issues"
+
+[project.scripts]
+mvstar-ping = 'mvstar.cli:ping'
