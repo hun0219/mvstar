@@ -1,7 +1,7 @@
 [project]
 name = "mvstar"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "About movies and actors"
 authors = [
     {name = "dMario24", email = "data.mario24@gmail.com"},
 ]
@@ -13,3 +13,9 @@ license = {text = "MIT"}
 
 [tool.pdm]
 distribution = false
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=8.3.2",
+    "pytest-cov>=5.0.0",
+]
